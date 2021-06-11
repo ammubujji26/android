@@ -33,3 +33,5 @@ def count_view(request):
     response=render(request,'movieapp/product.html',{'count':newcount})
     response.set_cookie('count',newcount)
     return response
+def display(request):
+    return render(request,'movieapp/listmovie.html') 
