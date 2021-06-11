@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'movieapp/base.html'%}
+{% block body_block %}
+    <h1>LATEST MOVIES</h1>
+    <form method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" name="" id="register" value="Register Now">
+    </form>
+{% endblock %}

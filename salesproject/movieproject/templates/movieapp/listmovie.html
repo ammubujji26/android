@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'movieapp/base.html'%}
+{% block body_block %}
+<h1>LIST OF MOVIES</h1>
+    {%if list_movie%}
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Movie Name</th>
+          <th>Hero Name</th>
+          <th>Heroin Name</th>
+          <th>Director Name</th>
+          <th>Movie Rating>
+        </tr>
+      </thead>
+      {%for movie in list_movie%}
+      <tbody>
+        <tr>
+          <td>{{movie.mname}}</td>
+          <td>{{movie.heroname}}</td>
+          <td>{{movie.heroinname}}</td>
+          <td>{{movie.directorname}}</td>
+          <td><{{movie.rating}}</td>
+        </tr>
+      </tbody>
+      {%endfor%}
+    </table>
+    {%else%}
+    <p>No Moview Data Found</p>
+    {%endif%}
+    {%endblock%}

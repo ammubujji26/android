@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'productsapp/base.html'%}
+    {%block body_block%}
+    <div class="container" text-align=center>
+      <h1>ADD PRODUCTS</h1><hr>
+      <form action="/create/" method="post">
+        {{form.as_p}}
+        {%csrf_token%}
+        <label>Product Name</label>
+        <input type="text" name="product_name" value={{form.product_name}}><br>
+        <label>Product catogory</label>
+        <input type="text" name="product_category" value={{form.product_category}}><br>
+        <label>Product quantity</label>
+        <input type='number' name="product_quantity" value={{form.product_quantity}}><br>
+        <label>Product price</label>
+        <input type="number" name="product_price" value={{form.product_price}}><br>
+        <input type="submit" value="Update"/>
+        </form>
+      </div>
+        {%endblock%}

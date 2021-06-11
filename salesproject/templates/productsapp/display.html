@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{%extends 'productsapp/base.html'%}
+    {%block body_block%}
+    <div class="container" text-align=center>
+      <h1>PRODUCTS LIST IN THE INVENTORY</h1><hr>
+      <table border='1'>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Quantity</th>
+            <th>Product Price</th>
+          </tr>
+        </thead>
+        {% for form in forms %}
+        <tbody>
+          <tr>
+            <td>{{form.product_name}}</td>
+            <td>{{form.product_category}}</td>
+            <td>{{form.product_quantity}}</td>
+            <td>{{form.product_price}}</td>
+            <td><a href="{%url 'update_view' form.id %}">Update</a>|<a href="{%url 'delete_view' form.id%}">Delete</a></td>
+          </tr>
+        </tbody>
+        {%endfor%}
+      </table>
+      <br><br>
+      <form action="/create/">
+        <input type="submit" name="create" value="Insert Data">
+
+      </form>
+      </div>
+        {%endblock%}
